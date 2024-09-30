@@ -25,8 +25,10 @@ def test_update_user():
 
 def test_search_user():
     vector = [0.1] * 128
-    response = requests.post(f"{base_url}/search", json={"user_vector": vector})
+    response = requests.post(f"{base_url}/search", json=vector)  # Send the vector as raw JSON list
     print(response.json())
+
+
 
 
 def test_retrieve_user():
